@@ -1,22 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import SignIn from '../views/SignIn.vue'
+import Index from '../views/Index.vue'
+import LogIn from '../views/LogIn.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'SignIn',
+    component: SignIn
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/index',
+    name: 'Index',
+    component: Index,
+    meta: { auth: true },
+  },
+  {
+    path: '/logIn',
+    name: 'LogIn',
+    component: LogIn
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 
@@ -24,6 +32,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/signIn', '/logIn', '/admin']
+  const authRequired = !publicPages.includes(to.path)
+  const logeedIn = JSON.parse(localStorage.getItem('token'));
+  if (to.meta.auth) {
+    if (authRequired && logeedIn['access-token'] !== undefined) {
+      return next()
+    }else if (authRequired && logeedIn['access-token'] === undefined) {
+      return next('/signIn')
+    }
+  }
+  next()
 })
 
 export default router
