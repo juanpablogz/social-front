@@ -19,7 +19,7 @@
                 </router-link>
             </a>
             <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-            <router-link to="/meeting">
+            <router-link to="/room">
                 <div class="text-center">
                     <span class="block h-8 text-3xl leading-8">
                         <i class="mdi mdi-video"></i>

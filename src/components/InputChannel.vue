@@ -9,7 +9,7 @@
       :placeholder="placeholder"
     />
     <span class="icon is-small is-left">
-      <img :src="require('../assets/images/ag-login.png')" alt="" />
+      <!-- <img :src="require('../assets/images/ag-login.png')" alt="" /> -->
     </span>
     <span class="validate-icon">
       <i

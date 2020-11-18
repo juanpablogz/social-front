@@ -6,6 +6,7 @@ import LogIn from '../views/LogIn.vue'
 import Landing from '../views/Landing.vue'
 import Chat from '../views/Chat.vue'
 import Meeting from '../views/Meeting.vue'
+import Room from '../views/Room.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,6 +19,12 @@ const routes = [
     path: '/Meeting',
     name: 'Meeting',
     component: Meeting,
+    // meta: { auth: true }
+  },
+  {
+    path: '/Room',
+    name: 'Room',
+    component: Room,
     // meta: { auth: true }
   },
   {
