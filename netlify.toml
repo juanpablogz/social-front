@@ -10,3 +10,11 @@
   from = "/index"
   to = "/room"
   status = 200
+    [[redirects]]
+  from = "/"
+  to = "/signIn"
+  status = 200
+      [[redirects]]
+  from = "/"
+  to = "/LogIn"
+  status = 200
