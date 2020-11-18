@@ -1,8 +1,5 @@
 <template>
 <div>
-    <div id="nav">
-      <router-link to="/">ingresar</router-link>
-    </div>
 <h1 class="text-center mt-12 fontbold text-2xl">Registrarse</h1>
   <div class="container mx-auto flex justify-center mt-12">
       <div class="w-full max-w-xs">

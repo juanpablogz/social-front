@@ -332,7 +332,7 @@ export default {
         } else {
           dom.setAttribute(
             "style",
-            `grid-area: span 3/span 4/${4 + 3 * index}/25;
+            `grid-area: span 3/span 4/${4 + 3 * index}/22;
           z-index:1;width:calc(100% - 20px);height:calc(100% - 20px)`
           );
         }
@@ -389,10 +389,11 @@ export default {
 }
 .ag-item {
   border-radius: 6px;
-
+  grid-area: "span 3/span 4/4/22";
   height: 100%;
   width: 100%;
 }
+section >
 #ag-resize-container {
   background-image: none !important;
   background-color: black;
@@ -470,5 +471,10 @@ export default {
 }
 video {
   max-width: unset !important;
+}
+@media (max-width: 600px) {
+.ag-item {
+  width: 178% !important;
+}
 }
 </style>
