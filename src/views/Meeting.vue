@@ -1,11 +1,9 @@
 <template>
   <div class="wrapper meeting">
-    <div>
-      <!-- <div class="ag-header-msg">
-          Room:&nbsp;<span id="room-name">{{channel}}</span>
-      </div> -->
-    </div>
     <div class="ag-main">
+      <!-- <div class="z-10 bg-transparent">
+          Room:&nbsp;<span>{{channel}}</span>
+      </div> -->
       <div class="ag-container">
         <AgoraVideoCall 
           :videoProfile="videoProfile"

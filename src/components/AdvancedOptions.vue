@@ -7,7 +7,7 @@
         aria-haspopup="true"
         aria-controls="advancedOptions"
       >
-        <span>Advanced</span>
+        <span>Avanzadas</span>
       </a>
     </div>
     <div class="dropdown-menu" id="advancedOptions" role="menu">

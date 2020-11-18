@@ -255,7 +255,7 @@ export default {
         this.client = null;
         this.localStream = null;
         // redirect to index
-        this.$router.push("/");
+        this.$router.push("index");
       }
     }
   },

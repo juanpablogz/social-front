@@ -1,106 +1,43 @@
 <template>
-  <div class="wrapper index">
-    <div class="ag-header"></div>
-    <div class="ag-main">
-      <section class="login-wrapper">
-        <div class="login-header">
-          <!-- <img :src="require('../assets/images/ag-logo.png')" alt="" /> -->
-          <p class="login-title">AppGora v1.0</p>
-          <p class="login-subtitle">Crear sala</p>
+  <div>
+    <div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
+        <div class="title">
+            <h1 class="font-bold text-center">Crear sala | ingresar</h1>
         </div>
-        <div class="login-body">
-          <div class="columns">
-            <div class="column is-12">
-              <InputChannel
-                @change="handleChannel"
-                placeholder="Ingresa el nombre de la sala"
-              ></InputChannel>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column is-7">
-              <BaseOptions @change="handleBaseMode"> </BaseOptions>
-            </div>
-            <div class="column is-5">
+
+        <div class=" options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+            <div class="">
               <AdvancedOptions
                 :onRadioChange="handleTranscode"
                 :onSelectChange="handleVideoProfile"
               >
               </AdvancedOptions>
             </div>
-          </div>
-          <div class="columns">
-            <div class="column">
-              <div id="attendeeMode" class="control">
-                <label class="radio">
-                  <input
-                    @click="handleAttendeeMode"
-                    value="video"
-                    type="radio"
-                    name="attendee"
-                    checked
-                  />
-                  <span class="radio-btn"> </span>
-                  <span class="radio-img video"> </span>
-                  <span class="radio-msg"
-                    >Video Call : join with video call</span
-                  >
-                </label>
-                <br />
-                <label class="radio">
-                  <input
-                    @click="handleAttendeeMode"
-                    value="audio-only"
-                    type="radio"
-                    name="attendee"
-                  />
-                  <span class="radio-btn"> </span>
-                  <span class="radio-img audio"> </span>
-                  <span class="radio-msg"
-                    >Audio-only : join with audio call</span
-                  >
-                </label>
-                <br />
-                <label class="radio">
-                  <input
-                    @click="handleAttendeeMode"
-                    value="audience"
-                    type="radio"
-                    name="attendee"
-                  />
-                  <span class="radio-btn"> </span>
-                  <span class="radio-img audience"> </span>
-                  <span class="radio-msg">Audience : join as an audience</span>
-                </label>
-              </div>
+        </div>    
+
+            <div class="form mt-4">
+            <InputChannel
+                @change="handleChannel"
+                placeholder="Ingresa el nombre de la sala">
+            </InputChannel>
+
+               <div class="text-sm flex flex-col">
+                <label for="description" class="font-bold mt-4 mb-2">Descripcion</label>
+                    <BaseOptions @change="handleBaseMode"> </BaseOptions>
+               </div>
             </div>
-          </div>
-        </div>
-        <div class="login-footer">
-          <a
-            id="joinBtn"
-            @click="handleJoin"
-            :disabled="!joinBtn"
-            class="ag-rounded button is-info"
-            >Join
-          </a>
-        </div>
-        <div class="login-footer">
-          <a id="joinBtn" @click="logout" class="ag-rounded button is-info"
-            >Salir
-          </a>
-        </div>
-      </section>
+
+            <div class="submit">
+                <button type="submit" class=" w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none "
+                id="joinBtn"
+                @click="handleJoin"
+                :disabled="!joinBtn"
+                >Entrar</button>
+            </div>
     </div>
-    <div class="ag-footer">
-      <a class="ag-href" href="https://www.agora.io">
-        <span>Powered By Agora</span>
-      </a>
-      <div>
-        <span>Interested in Agora video call SDK? Contact </span>
-        <span class="ag-contact">sales@agora.io</span>
-      </div>
-    </div>
+    
+<!-- asasa -->
+
   </div>
 </template>
 
@@ -121,6 +58,7 @@ export default {
       transcode: "interop",
       attendeeMode: "video",
       videoProfile: "480p_4",
+      pablo: false
     };
   },
 
@@ -174,134 +112,4 @@ export default {
 </script>
 
 <style>
-.index.wrapper {
-  /* background: url("../assets/images/ag-index-background.png") center no-repeat; */
-  background-size: cover;
-  min-height: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-}
-
-.index .ag-footer {
-  display: flex;
-  padding: 0 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.index .ag-main {
-  flex-grow: 1;
-}
-
-.ag-contact {
-  color: rgb(0, 182, 237);
-  cursor: pointer;
-}
-
-.login-wrapper {
-  color: rgb(216, 216, 216);
-  width: 284px;
-  font-size: 14px;
-}
-
-.login-header,
-.login-footer {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.login-header p {
-  margin: 10px 0;
-}
-
-.login-header img {
-  width: 50%;
-}
-
-.login-title {
-  font-size: 16px;
-  color: #fff;
-}
-
-.login-subtitle {
-  color: #637c8e;
-}
-
-#joinBtn {
-  width: 100%;
-  font-size: 18px;
-  padding: 10px 10px;
-  background: rgb(0, 182, 237);
-}
-
-#joinBtn:hover {
-  box-shadow: 0 2px 2px 1px #0056ed;
-  transition: box-shadow 0.1s ease-in-out;
-}
-
-#attendeeMode input[type="radio"] {
-  position: absolute;
-  left: -99999px;
-}
-
-#attendeeMode {
-  line-height: 1.3;
-}
-
-#attendeeMode .radio {
-  display: flex;
-  align-items: center;
-  /* justify-content: space-around; */
-}
-#attendeeMode .radio-img {
-  width: 30px;
-  height: 30px;
-  /* vertical-align: middle; */
-}
-#attendeeMode .radio-img.video {
-  position: relative;
-  left: 3px;
-  background-size: cover;
-  /* background: url("../assets/images/ag-video-s.png") no-repeat center; */
-}
-#attendeeMode .radio-img.audio {
-  /* background: url("../assets/images/ag-mic-s.png") no-repeat center; */
-}
-#attendeeMode .radio-img.audience {
-  /* background: url("../assets/images/ag-audience.png") no-repeat center; */
-}
-#attendeeMode .radio-btn {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  /* background: url("../assets/images/ag-oval.png") no-repeat center; */
-}
-#attendeeMode .radio-msg {
-  margin-left: 10px;
-  color: #637c8e;
-}
-
-/* #attendeeMode input[type="radio"]:checked + .radio-btn {
-  background: url("../assets/images/ag-oval-active.png") no-repeat center;
-}
-#attendeeMode input[type="radio"]:checked + .radio-btn + .radio-img.video {
-  background: url("../assets/images/ag-video-active-s.png") no-repeat center;
-}
-#attendeeMode input[type="radio"]:checked + .radio-btn + .radio-img.audio {
-  background: url("../assets/images/ag-mic-active-s.png") no-repeat center;
-}
-#attendeeMode input[type="radio"]:checked + .radio-btn + .radio-img.audience {
-  background: url("../assets/images/ag-audience-active.png") no-repeat center;
-} */
-#attendeeMode
-  input[type="radio"]:checked
-  + .radio-btn
-  + .radio-img
-  + .radio-msg {
-  color: rgb(0, 182, 237);
-  opacity: 1;
-}
 </style>

@@ -48,7 +48,7 @@ export default {
         },
       ],
       active: false,
-      message: "Agora Video Call",
+      message: "Videollamadas grupales",
     };
   },
   methods: {
