@@ -4,9 +4,10 @@
   base = "client"
   # The base directory should be the path to the nested Vue project
   [[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
   from = "/"
-  to = "/meeting"
+  to = "/index"
+  status = 200
+  [[redirects]]
+  from = "/index"
+  to = "/room"
   status = 200
