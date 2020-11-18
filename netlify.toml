@@ -3,18 +3,18 @@
   publish="dist"
   # The base directory should be the path to the nested Vue project
   [[redirects]]
-  from = "/"
+  from = "/*"
   to = "/index"
   status = 200
   [[redirects]]
-  from = "/index"
+  from = "/*"
   to = "/room"
   status = 200
     [[redirects]]
-  from = "/"
+  from = "/*"
   to = "/signIn"
   status = 200
       [[redirects]]
-  from = "/"
+  from = "/*"
   to = "/LogIn"
   status = 200
