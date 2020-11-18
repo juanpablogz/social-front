@@ -1,32 +1,60 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+.rounded-xl {
+    border-radius: 1rem
+}
+html,
+body,
+#app,
+.full {
+  height: 100%;
+  min-height: 100%;
+  font-size: 14px !important;
 }
 
-#nav {
-  padding: 30px;
+img {
+  vertical-align: middle;
+  max-width: 100%;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.ag-header,
+.ag-footer {
+  /* flex-basis: 70px; */
+  width: 100%;
+  opacity: 0.8;
+  height: 70px;
+  color: #fff;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.ag-main {
+  width: 119%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: start;
+  overflow: hidden;
+}
+
+.ag-rounded {
+  border-radius: 19px !important;
+}
+
+.ag-href {
+  color: #fff;
+  cursor: pointer;
+}
+
+.ag-href:hover {
+  color: #fff;
 }
 </style>
