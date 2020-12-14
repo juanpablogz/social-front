@@ -1,4 +1,6 @@
 <template>
+<div>
+    <Testing/>
  <div class="bg-white absolute bottom-0 w-full border-t border-gray-200 flex">
             <a href="#" class="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500">
                 <div class="text-center">
@@ -37,11 +39,15 @@
                 </div>
             </a> -->
         </div>
+</div>
 </template>
 
 <script>
+import Testing from "@/components/Testing";
 export default {
-
+  components: {
+    Testing
+  },
 }
 </script>
 
